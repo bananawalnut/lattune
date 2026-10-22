@@ -19,7 +19,7 @@ Public migration excludes `.runtime`, Hermes homes, bearer/connection files, mod
 7. Add curated presets and optional flow beta. Keep legacy import compatibility behind an explicit converter with source-version errors.
 8. Release beta after all supported gates; stabilize only after real consumer feedback and measured compatibility.
 
-This repository foundation completes none of the extraction gates by itself. The concept is a design artifact, not the extracted Studio.
+The first private-alpha runtime now has real packed-consumer imports; see [extraction evidence](runtime-extraction.md). This does not complete the full production gates. The Studio concept remains a design artifact.
 
 ## Required evidence before release
 

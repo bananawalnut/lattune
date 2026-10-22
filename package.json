@@ -2,10 +2,18 @@
   "name": "lattune-foundation",
   "version": "0.0.0",
   "private": true,
-  "description": "Lattune product blueprint and interactive Studio design concept; no runtime release yet.",
+  "description": "Programmable image surfaces and typed component contracts, with a planned local authoring studio.",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "node scripts/serve.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "build:runtime": "node scripts/build-runtime.mjs",
+    "test:runtime": "node --test tests/runtime.test.mjs",
+    "test:consumers": "node scripts/test-consumers.mjs",
+    "test": "npm run build:runtime && npm run test:runtime && npm run test:consumers && npm run check"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "vite": "8.3.5"
   }
 }

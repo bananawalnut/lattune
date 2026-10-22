@@ -1,6 +1,6 @@
 {
   "schema": "lattune.roadmap.v1",
-  "status": "planned",
+  "status": "in-progress",
   "created": "2026-10-22",
   "canonicalTracker": "DevGraph",
   "repository": "https://github.com/bananawalnut/lattune",
@@ -10,7 +10,7 @@
       "title": "Preserve and specify",
       "dependsOn": [],
       "ownerRole": "Architecture / product",
-      "status": "planned",
+      "status": "in-progress",
       "exitCriteria": [
         "Inventory reviewed prototype source and provenance",
         "Choose code license and audit redistribution rights",
@@ -25,7 +25,7 @@
         "P0"
       ],
       "ownerRole": "Library / release",
-      "status": "planned",
+      "status": "in-progress",
       "exitCriteria": [
         "Extract headless ESM core with public declarations",
         "Install actual tarballs in clean vanilla, Vite and SSR consumers",
@@ -106,10 +106,14 @@
     "arbitrary TypeScript-to-GPU compilation",
     "hosted collaboration and public registry"
   ],
-  "releaseClaim": "No production library implemented by this planning foundation",
+  "releaseClaim": "Private-alpha runtime imports work; full production release gates remain open",
   "tracking": {
     "initiative": "frontend-tools-components",
     "project": "lattune-production",
     "issue": "lattune-production-plan"
-  }
+  },
+  "evidence": [
+    "docs/inventory.md",
+    "docs/runtime-extraction.md"
+  ]
 }

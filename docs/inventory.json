@@ -1,0 +1,1686 @@
+{
+  "schema": "runtime-extraction-inventory.v1",
+  "recorded": "2026-10-22",
+  "sourceRepository": "https://github.com/bananawalnut/glyph-studio",
+  "sourceHead": "70c5033d90c377d54d23e8e6af6fe7feea4f9e47",
+  "scope": "Non-private code/docs/static source in tracked and non-ignored untracked files; file paths and hashes only. No runtime stores, uploads, models or secrets copied. Selected files reviewed before porting.",
+  "license": "Source is owner-directed prototype work; explicit public redistribution license remains undecided. Extracted package stays private and UNLICENSED; no npm publication. Third-party tracking assets are excluded.",
+  "selected": [
+    "player/program.js",
+    "player/image-surface.js",
+    "player/flow-core.js",
+    "player/renderer.js",
+    "player/geometry.js"
+  ],
+  "summary": {
+    "reference-retain": 57,
+    "generated-reference": 63,
+    "lab-retain": 50,
+    "defer-agent-integration": 48,
+    "defer-author-compiler": 7,
+    "defer-flow-and-dom": 6,
+    "extract-contract-subset": 1,
+    "extract-renderer-support": 1,
+    "extract": 2,
+    "extract-explicit-renderer": 1
+  },
+  "files": [
+    {
+      "path": ".cargo/config.toml",
+      "sha256": "5246aa27f113582523367b14765c561c48f049f5498cb8bd117b0487dedfc992",
+      "bytes": 162,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "README.md",
+      "sha256": "428cb076f11bcacabe878c01d7729a519276a068577e6ba08542c58635a9dca1",
+      "bytes": 21820,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "build.py",
+      "sha256": "48dcf9019aba7f6c542109d98fe4a3beb63c1f6b6a936469bf1c0cc9104c8b69",
+      "bytes": 11825,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "dist/agent-panel.css",
+      "sha256": "d4cdb47842dfc4036fb3a0d7a24067e506b9e7011fae98dcef4c4254f4664b95",
+      "bytes": 2491,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/agent-panel.js",
+      "sha256": "9e7c7ad98fefb8a9268189a29ebde8eeb29b451a2d2b7875ed10badad3cb101c",
+      "bytes": 10634,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/agent-tools.json",
+      "sha256": "21037ef8908a4f83f68d9e82cd16d7c9baac105622767c7f795a8ce73ecca80d",
+      "bytes": 48843,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/animal-check.html",
+      "sha256": "2544d9504a8995fd2352ab375fccba7be1ee65f8f8766b3699fd036d1e708986",
+      "bytes": 5266,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/app.js",
+      "sha256": "8f355824226cb9157632e8624d57a72871faf148dfccad31513520b773bbb69d",
+      "bytes": 13635,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/benchmark.html",
+      "sha256": "3397e108a187b1c762eba7e06ff2a980aa44e8d69bd0c2539acd112a22458eba",
+      "bytes": 8128,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/betta-geometry.js",
+      "sha256": "524e4e2f245bfce7920709d875d013dfd75f7d1d6d2cb1389a811bdb979725ac",
+      "bytes": 4752,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/betta.html",
+      "sha256": "aac620c49ced5c764e3e9c4e751dbd9edc0c11fc235b027884a15c5bedb66914",
+      "bytes": 3002,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/betta.js",
+      "sha256": "f3ec81c4679cfc05e27ac58eca5b81ebf65aa0094156487738942ca49e0ea9ff",
+      "bytes": 8442,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/capture-check.html",
+      "sha256": "38f5dbd94fe7c3a9c2ff18a8d26f9ab81a9694f0e5dd5bb523d89fd6081018c9",
+      "bytes": 18243,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/capture-check.js",
+      "sha256": "5d36aeb9358dad0e980782c91882ce1448a32416d06490e4579bcfedf7dded3f",
+      "bytes": 7433,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/capture-workshop.js",
+      "sha256": "1060da317636b486c070097e0ba731cbe2605f087705deef4b2f958ab1aa7d4f",
+      "bytes": 62676,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/component-agent-check.html",
+      "sha256": "42bf9704d26f9ec5ff567618537199a1e4ba6102c51ab35f6539dc397b430fc5",
+      "bytes": 3880,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/component-agent-ui.js",
+      "sha256": "8c60d06d45c407b926f58aa4127dc2e2cacaccdd60b04dcfded95a687bae6af2",
+      "bytes": 11650,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/component-agent.css",
+      "sha256": "17b4b36da75be334237c1dc11fd5de494014308a020e71787ff4400294cb7e81",
+      "bytes": 1143,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/components.html",
+      "sha256": "38201c8401c27adcb48662871876e210b54c8f1490ce354116f44fd440760003",
+      "bytes": 47305,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/design-check.html",
+      "sha256": "d3073192064a67ee16bc43ac35753d07f8a3f5c95b45cc7f7d5b96a4730593d4",
+      "bytes": 7022,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/design-system.css",
+      "sha256": "81a5ab62a7c4b32db3060907f0e019537d85fb5d00632f6be183c9fc9c11ded2",
+      "bytes": 9041,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/design-system.html",
+      "sha256": "f82dcc08f51c7aac18b7a4bef5399c52219785fc60ae2829bc35797b90b5272e",
+      "bytes": 23245,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/design-system.js",
+      "sha256": "6e16b6d15b5eea7299b7a6d1261525e951b4d45b9ee2f5e645152c0ff0132889",
+      "bytes": 14761,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/design-system.json",
+      "sha256": "9239be82a63447d224c0b11550e9df507885fa642890eb99e2218267e46ac1f1",
+      "bytes": 12401,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/design-tokens.css",
+      "sha256": "7dc52a0253c5519a94f4750a19bb114bbfe462ad1de93412f4c40c6255954b41",
+      "bytes": 604,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/designer-ui-check.html",
+      "sha256": "280006883f85d4f9bb4760a519ba627cf711415273a7eabcb8ab4c1d94c621ae",
+      "bytes": 4683,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/example-scene.json",
+      "sha256": "d036fb1d936ffc7c9c4a479f455667c1632251abb47e38b49f38e2a0390b7987",
+      "bytes": 7109,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/exchange-model.js",
+      "sha256": "d9a40ec102adba3059b4129dff5d1372615bb4f976c1ad4a6046d5624fc142f6",
+      "bytes": 5048,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/face-tracking-check.html",
+      "sha256": "4a5dd6ac8d1b78a8b3ca59050da25935023616bf49b54f91a9ed0a2cf9e62576",
+      "bytes": 18505,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/face-tracking-check.js",
+      "sha256": "d94f4829ebf080beb86eaf9f1da5dd4ef80686c3fa7416ac135189e9b65204e9",
+      "bytes": 33184,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/face-tracking-core.js",
+      "sha256": "18266685984c596b0475eec0fc9a2e38c0df9a2c26362bcf19d8de7171f8a51a",
+      "bytes": 3003,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/face-tracking-worker.js",
+      "sha256": "2665ba128a48988aadf897e1ace098381084fd3dc72334466a65362e6ef9e774",
+      "bytes": 2023,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/face-tracking.js",
+      "sha256": "350bf7ab298e1410f40938da319003b5b8d100f7c214bef7c4bbb19768877685",
+      "bytes": 8853,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/flow-check.html",
+      "sha256": "2befbfa1b4796cf5124fc4b7638cab8c5149de574500e1eb9d2473c3df8586b4",
+      "bytes": 17638,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/flow-demo.js",
+      "sha256": "a66067545ee123dc2ccd1d55178275c0b7aabd035e84382c294a3c2c4f3c1f23",
+      "bytes": 18376,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/flow.css",
+      "sha256": "26c1da3483063187691607e0db10f368ec7390d66cedf286db63099d3f4d859e",
+      "bytes": 10477,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/flow.html",
+      "sha256": "b559cff0352ccc44b0c81337fd517e932a72087e252b458a3a3217e9d8a5968f",
+      "bytes": 8017,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/glyph-agent.js",
+      "sha256": "953efaa49ddd0349f3344c8e4bdca19f33d309d05713f1e8918c7a04aba9a826",
+      "bytes": 28858,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/glyph-capture.js",
+      "sha256": "defafb0a154e69a58fce5ec8af9e12b32d2348b5086e0232fdd7da4a723cea7a",
+      "bytes": 97474,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/glyph-design.js",
+      "sha256": "d7a0f7a336845dc1ff6c478c8edaa2242b157aa2b3590b3fe04c04ca8757255d",
+      "bytes": 16280,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/glyph-flow.js",
+      "sha256": "c7c755ae71dfe3f2ff3efaf8acb959eabb3e9e8170ad9116e89f7d80f15a3655",
+      "bytes": 65928,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/glyph-image.js",
+      "sha256": "68d334ddc98c99977e9f041d26abc1f8fd2cd5601e0b2603844c367ee3e6b2a8",
+      "bytes": 26067,
+      "sourceStatus": "untracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/glyph-player.js",
+      "sha256": "645800e09214469f623b6ebc57b582325922249ea8e0956077cbc0394aea2874",
+      "bytes": 32527,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/glyph-program.js",
+      "sha256": "6d6956a8c3edca02f3ff9d15e67eeecb155ecf20480091c308360124d87ff868",
+      "bytes": 16020,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "5a04a743d79f5c4fdc013d6ec3eab9d68ddc1691462fe49d449637b5a9cd4c64",
+      "bytes": 11797,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/language-workshop.css",
+      "sha256": "ef25c0db39a7e90a8439ac52f82af92fc9194b6ce91e8b389dcb6edceb68c9a4",
+      "bytes": 3574,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/language-workshop.js",
+      "sha256": "831201ae524b4bec5a8fc5060f68dee381d9e16fe9a16361408af373b79c529e",
+      "bytes": 15710,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/life-geometry.js",
+      "sha256": "34c650afc17ce8bc56451712b6a741638f269a72bacdd91619a31db72d03c456",
+      "bytes": 8122,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/life-lab.css",
+      "sha256": "969b8e7706d0b88a21a6fbe9d2606fff62cc38f7886fd72f16ca42bf7004cf59",
+      "bytes": 4846,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/life-lab.js",
+      "sha256": "d228de73f96994cb2ecf75e6ef5df53a32f433942efcaca4a4aebb06bc9678ab",
+      "bytes": 5810,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/life-motion.js",
+      "sha256": "a1da9f7fb4e3d5e2779ac5d6850648178315e7b6050ca428b644793164320020",
+      "bytes": 4694,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/life-player.js",
+      "sha256": "a69aa0df386e0b5f2ba0513b2cc5b3326d96c8cb57da6ce72afbaa0e0ad00d6a",
+      "bytes": 11739,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/life.html",
+      "sha256": "e8aaf04671b04ec6044d45761ca24c12606659b057c133e28e2148a4802bc28c",
+      "bytes": 3453,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/math-check.html",
+      "sha256": "8d814d1680d2e8de636ba0eb1b442b23efb66b36eb17f9cb0317bd6d62914870",
+      "bytes": 5965,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/math-examples.js",
+      "sha256": "931b2f91a4ce0f234d6dc3173a1fd0390bc245c4229bace2e2aa104c412d203e",
+      "bytes": 2642,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/math-lab.css",
+      "sha256": "a2400acc33ff56764842c076ae477f0b026993848aa37ca305adb2cb278f3292",
+      "bytes": 11286,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/math-lab.html",
+      "sha256": "29f2bbb03f71e6a2934d1099602b9e79712e7b0bd7f87a446b12ac999f8b8023",
+      "bytes": 34491,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/math-lab.js",
+      "sha256": "9008af90daba50447b25d2ab18203db6b54ca79a248fca2bc87ff403b1029c46",
+      "bytes": 163813,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/player-sizes.json",
+      "sha256": "914a5313959d1e7efce2581c247d40075f564f1cd0316f49121ff5f0f1638567",
+      "bytes": 636,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/preset-check.html",
+      "sha256": "c8f7d61da8d37ac677011f8c473d304b0d2fe4d3721ddf1a1a4c297b4d3a0c91",
+      "bytes": 6448,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/preset-designer.css",
+      "sha256": "f39eb4163d81c1f0ce75219301735a53a0b79341137239e3ee4bdc29d8125637",
+      "bytes": 3276,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/preset-designer.html",
+      "sha256": "6abb180bf216520ecc71fe58a8e79f88bf11cc41f749596e75887be81e2f496d",
+      "bytes": 4205,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/preset-designer.js",
+      "sha256": "aa98356dbc9d77b2e9bad1dba76b48b38a790f2f4f91bade5307867ca8427962",
+      "bytes": 5224,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/presets.js",
+      "sha256": "170eda9260dda7a2bc9cc5573d14f162b5548dec38cf2e6f580bb624ed4bea5b",
+      "bytes": 2855,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/presets/floating-ribbon.preset.json",
+      "sha256": "fb260fa13bf72cd8cab80ca1fd87d497e656d7ab04aeaea51f72c9e7806f9c0c",
+      "bytes": 5998,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/presets/signal-buoy.preset.json",
+      "sha256": "51286597963da94db5a9c465d583f51f1c6865d22262fe59d9ccc855d168ebc8",
+      "bytes": 5435,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/presets/slow-orbit-and-float.preset.json",
+      "sha256": "124ebec427b77a904e7d103bef14c658c8d0a8f302a6d96ba9a586b94bc2c7be",
+      "bytes": 6015,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/presets/zenith.scene.json",
+      "sha256": "908d267cc3d479551d94d444a27efb41d3d3df2688100e21a2237f9d51a17dfe",
+      "bytes": 2430,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/program-check.html",
+      "sha256": "674803c18527fa8c8f5bea9b7321f199143d24e6bb00b6e85f0d61c15a16480f",
+      "bytes": 2828,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/program-preview.js",
+      "sha256": "c9985697ace05b1f36125c77be6f83a29a6f44ee011f94ae2232292fef29e668",
+      "bytes": 6743,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/program-runtime.json",
+      "sha256": "ea2963ad4f3d0f00a0a3fa180c83bad8106a949e64b9fff6b63595f109332a7c",
+      "bytes": 77529,
+      "sourceStatus": "tracked-modified",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/program-seed.js",
+      "sha256": "783e06b65a37368051948d2ab109a066887870261e541561373d678a4bccaedd",
+      "bytes": 2010,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/program-workshop.js",
+      "sha256": "cf7308a61572de87ce1236a9be8c875cdf6ad8c049f2662f029283b0f596e1c4",
+      "bytes": 8368,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/scene.js",
+      "sha256": "cfcb69357c466207e63a26198cda8e592db1ab5b90d74c750bfb7ed2fd82c9a8",
+      "bytes": 24047,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/scene.schema.json",
+      "sha256": "56e29d54a865b4ce20bd8d0fb66604ca1a07e983bf1721e939a4ea8201277531",
+      "bytes": 11985,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/shared-exchange.css",
+      "sha256": "12f0bf8e06d03c62e9d860c4262c64baeacb3e0da7b3666c268f97b9b1b5c4e9",
+      "bytes": 2125,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/shared-exchange.js",
+      "sha256": "5d421eff85f48f116e4b091ab98520703926902dc6b44ee3abd4a12f53e13c5b",
+      "bytes": 6688,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/shared-interface-check.html",
+      "sha256": "a61176a5f30eb4faa66a44ba32acdb82505ec199a3146636cd0a34615b90bf4f",
+      "bytes": 5525,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "dist/style.css",
+      "sha256": "bb2ed8281bf7937dcad3ab281844b5c7ec9feffb0be88ea0ab6341cad81917b4",
+      "bytes": 8869,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "dist/zenith.html",
+      "sha256": "753b7967d98cc0b0c01f50707e0dbd81972b182227b2ad563d94867d4092f2d7",
+      "bytes": 6649,
+      "sourceStatus": "tracked",
+      "disposition": "generated-reference"
+    },
+    {
+      "path": "docs/animal-studies.md",
+      "sha256": "d5ba4ff773aa84b185ba5a400c7ceb51cda9f8cede0c2e0068e44d23856ca370",
+      "bytes": 6880,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "docs/capture-surfaces.md",
+      "sha256": "e7d15256f3203ebd0bb574cc0fec08a9cce0b698dcea5d10d2807435b83dd544",
+      "bytes": 47992,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "docs/codex-connection.md",
+      "sha256": "e86e01cd8bb185bb69d897f82dd43e2b72c83cd24e3d9df6c672c551c29fd76b",
+      "bytes": 5652,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/component-agent-interface.md",
+      "sha256": "a75e6ac868fc967d43b352c05bd41b5a1827c1fe63cc31af2dc32049cf315da5",
+      "bytes": 8887,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/component-authoring-interface.md",
+      "sha256": "8d289995d3d60506b5d3884d4b33056c1920e9382d6b5165fca1cbed0f571ff5",
+      "bytes": 9177,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/component-interface.md",
+      "sha256": "20fa6a95482e12b2a0ce19a27a060305be8e8fdf7a0c1288b6fa85a6f9606025",
+      "bytes": 7213,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/design-system.md",
+      "sha256": "937ea7c411157d3e43b91ba8d6d641cc072b8dcbf2282623e3bda2baaf60ccd2",
+      "bytes": 12784,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/functional-components.md",
+      "sha256": "937256e7578283bc3330b1c15a569f80297a236fbee03bc3ca76379404aa7406",
+      "bytes": 26567,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/image-surfaces.md",
+      "sha256": "8389a2fe13875d6131e0543ce755d157bb44869a631b7606e4e404443899c03d",
+      "bytes": 12960,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/language.md",
+      "sha256": "540592469af04ba84ee2bda885bfd3493158e56de7d7c55711fa98f08413305e",
+      "bytes": 11213,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/performance.md",
+      "sha256": "3c75d13aebef30bdf070bc17f9bfda6d324f8da6dcb3aeb683051013e8f986c7",
+      "bytes": 3729,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/preset-workshop.md",
+      "sha256": "d95fca6e5c46fa506ec0f2c28c92842114f18f945492ff8ec309e77d9fe8c657",
+      "bytes": 5858,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/programmable-geometry.md",
+      "sha256": "17d9c6b599f0465b851aa65a732408ca204a127a559ae6df3c31ef2f4ec147da",
+      "bytes": 12956,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/studio-designer.md",
+      "sha256": "353100cad169cfc6e9915824a35eeebfa2993c3a00536cd262dd06caa2693c4e",
+      "bytes": 7381,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "docs/web-components.md",
+      "sha256": "a4eda411f2f6f9743a4b2cdb9307ec3d09315f0f453427eca8fc6ade84f35a98",
+      "bytes": 7951,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "hermes/README.md",
+      "sha256": "7fa5fa0fc78bf919d774bd54189ac2daf6ed9b4c3fac56bb02b7f1d8fa6ce020",
+      "bytes": 9889,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/agent-jobs.cjs",
+      "sha256": "11f55641b79b278c94da59f4ec26bcd4e93b6a4aa5fe26df796f0af7d3f60cff",
+      "bytes": 14114,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/agent-worker.py",
+      "sha256": "1610fa3ae5180558cfdd8e99ad45627968260c31958597ae7712bb9c70254ff4",
+      "bytes": 7686,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/attach.py",
+      "sha256": "5415197cf192816eafe567903fded30d2b694f310148ae447f565f35496b334a",
+      "bytes": 7346,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/bridge.cjs",
+      "sha256": "382854de93e36118addd22b08bfb90f245ae56d767d45f8fdd6d49d297159bab",
+      "bytes": 21279,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/browser-client.js",
+      "sha256": "e50e76a45d4d99b5f2b625c521d642e806105fbba346da80cf03d1f2b0600ae0",
+      "bytes": 3680,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/codex-worker.cjs",
+      "sha256": "b161f6ec8d8df2758bce036c5ebb3ddc20b029b1d50f12bafee33dc2b35c46f0",
+      "bytes": 8788,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/component-service.cjs",
+      "sha256": "625409ed7e5447b4b353ed68318be09cb145646e8358fb76596dee4ea7e73d38",
+      "bytes": 4343,
+      "sourceStatus": "untracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/connect-codex.cjs",
+      "sha256": "ab9c34431eb7cfc342489c2d0ee1b614e3bfee9eff0e36c8fe0bbac0e17436cc",
+      "bytes": 1411,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/connect-voice.py",
+      "sha256": "744ee51237812f5fc587bcd6496010573bfd83f42abfa9ed3d6e5b9bc7b33b52",
+      "bytes": 1102,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/designer-context.py",
+      "sha256": "5c6044ae94bcfdf4e42275efb01527af95da9391f381a6a5b6ff7a0c43aa4e03",
+      "bytes": 1473,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/designer.cjs",
+      "sha256": "6f6d8b7a136092ace950f53a14282c3fba3785bc78b6ca365ce6d8906d3c8863",
+      "bytes": 5645,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/flow-store.cjs",
+      "sha256": "d620c89fc6f116141a0f795f0f3d974c36ff090138cd2d57c3efb6142d5306d0",
+      "bytes": 11310,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/__init__.py",
+      "sha256": "555d56b04356c7ec493d4761a85be9afd11fa18c94caca0b1c7964c0b38f07ff",
+      "bytes": 967,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/client.py",
+      "sha256": "31c8511182da75a09dec473468840a8fd3e911f979fe2cd9f88854eec9a6c5f6",
+      "bytes": 4463,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/component-tools.json",
+      "sha256": "714073550f3ed036042e0c39ad352196c90245e638bf83f8511eee4b703683ad",
+      "bytes": 7132,
+      "sourceStatus": "untracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/designer/SOUL.md",
+      "sha256": "8f065e2511d34854ffc2dcfa783c8363acbe6824c82a74b628f0e057aaa8728d",
+      "bytes": 774,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/designer/WORKFLOW.md",
+      "sha256": "9a8d1b99a12c26162735144157f25237444e47d63b5408464f24d17f688aea25",
+      "bytes": 2288,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/designer/profile.json",
+      "sha256": "185a991bca11f804089b764af9af35ba1d7bf516a557a71fdcd49ec26fe900af",
+      "bytes": 4234,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/schemas.py",
+      "sha256": "1c1ae44969d09d1eaf2f30b7fcd4f8c9b2d024da03a405e5ea8b9be0596b3625",
+      "bytes": 6067,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-biomotion/SKILL.md",
+      "sha256": "8968723652938ecd34f4ce8e151dfb06bced97b54419fb52a2b616259e8e671c",
+      "bytes": 1620,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-flow/SKILL.md",
+      "sha256": "7c844f782cde1aac729f8eb40047cb973fc060a6989906cb96b5c2d61cf3db7d",
+      "bytes": 6876,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-review/SKILL.md",
+      "sha256": "f712cd9322ec3068542152adb9fcdf355512de37a86fe97e600d6e3b10679fed",
+      "bytes": 1324,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-studio/SKILL.md",
+      "sha256": "2ab5c6f47cd18c7231329b6d83c8042bf9f761a5263607cd5ee9ec3cbb48097f",
+      "bytes": 5871,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-studio/references/example-scene.json",
+      "sha256": "d036fb1d936ffc7c9c4a479f455667c1632251abb47e38b49f38e2a0390b7987",
+      "bytes": 7109,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-studio/references/scene.schema.json",
+      "sha256": "56e29d54a865b4ce20bd8d0fb66604ca1a07e983bf1721e939a4ea8201277531",
+      "bytes": 11985,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-studio/scripts/client.py",
+      "sha256": "31c8511182da75a09dec473468840a8fd3e911f979fe2cd9f88854eec9a6c5f6",
+      "bytes": 4463,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-surfaces/SKILL.md",
+      "sha256": "05b679fc0267406ac35b9c11692d12689d19cddcecc02c2212a913efc29b8617",
+      "bytes": 4132,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/plugin/glyph-studio/skills/glyph-typescript/SKILL.md",
+      "sha256": "ef9a7e71ebc47b99d468654a87789f3fb4731045ef3bc3b47b9ba2f2d0a18fc3",
+      "bytes": 4829,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/preset-store.cjs",
+      "sha256": "bf37081ea4d9acd73da14901679e03d972f9607c749c26f6a5fe330c37498656",
+      "bytes": 4719,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/program-store.cjs",
+      "sha256": "56d05919606f979027c79e292edbcf2c71e139be0cab3be2362a097c4a8e20f8",
+      "bytes": 3263,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/run.py",
+      "sha256": "cc1292ac20df673e1029bd7f64bc1a796ab30e3985a00bc77f93d06234893a5a",
+      "bytes": 785,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/start.py",
+      "sha256": "6c90f5031ab4cf5c5e0e6e50f1a653406f6829f3c5ea95d11d9b54f58471e004",
+      "bytes": 4190,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/studio-mcp.cjs",
+      "sha256": "b78f95b5437b1f7bd5c7892fc6316df7899b341edce35226d5b6127b84c52801",
+      "bytes": 3267,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-agent-jobs.cjs",
+      "sha256": "cf6a9350086473193c8dcd36ba573d67dcc0579ad73d7c66692fdeb155bdbb24",
+      "bytes": 3175,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-attach.py",
+      "sha256": "8469cb87ab5995aa61e420fe74d4e494f925304ecd3bcbdc2518524d09d35141",
+      "bytes": 3818,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-bridge.cjs",
+      "sha256": "1f7f48da5b92600ac8360b49638b5bd6019c84e3fa094257c9d8bef8a51ee4ac",
+      "bytes": 4028,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-codex.cjs",
+      "sha256": "62b9f0de998cf383098179c1d22185a5e7f91290ea4f8c6215e9538a3aacfe72",
+      "bytes": 4690,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-designer.cjs",
+      "sha256": "3d003571492581968142930f6a4fcd66865cff301f6b4f153dde0d7da29f5423",
+      "bytes": 5566,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-flow-agent.cjs",
+      "sha256": "a7726b20b0d1ec7576d6ab2304dc744d001e0b0d4bb091c2ab07dc48418b6fe2",
+      "bytes": 7187,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-language.cjs",
+      "sha256": "397fc043b7e615bc57c8b0707565ca8658fa22baf1eafd377862bab144ddc717",
+      "bytes": 2456,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-native.py",
+      "sha256": "804f07369ccebedebccafe8ee28feb033f4e2d832109952ebefdc65fa6780461",
+      "bytes": 3005,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-program-agent.cjs",
+      "sha256": "52d1f9b3590239f58dd0f3cac5e08f810d2492262e40716b71076317dabd9ac4",
+      "bytes": 3488,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-typescript-agent.cjs",
+      "sha256": "55b42b8d8b7ceb8f8b92bff476eb4042715ea604a9af5d599881e960a2510fef",
+      "bytes": 6876,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/test-voice.cjs",
+      "sha256": "756711f61f149617892602266955956b261dc28a802d69485e669438b2e0846d",
+      "bytes": 1936,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/typescript-store.cjs",
+      "sha256": "423305dc5abbc0318f8336599a747f00934e89e71edab3454c5e58d14463b94f",
+      "bytes": 4150,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/voice-worker.py",
+      "sha256": "d619c826cb7fb33afc048f61c8a80872e96ac9e2de6fc83a07156f10bcdf484b",
+      "bytes": 1502,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "hermes/voice.cjs",
+      "sha256": "e262d6227df9b4b56226c40624f639dc14c1de13445bc13df41a14f718f83407",
+      "bytes": 2615,
+      "sourceStatus": "tracked",
+      "disposition": "defer-agent-integration"
+    },
+    {
+      "path": "language/author-runtime.js",
+      "sha256": "82d2268e95fcb40995c5e7f23e0699a1fb66d254aeb384e5a16577e11f226b87",
+      "bytes": 4005,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "language/author.d.ts",
+      "sha256": "d096c7878fb4d20ea2a27ad45b2f19083398bd498b4c59d7e0996a34ab2a4967",
+      "bytes": 8330,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "language/compiler.cjs",
+      "sha256": "2ea3999162f9687cfd889c86a13c0118f3d07b433350c2b020f21bba6768f65b",
+      "bytes": 6356,
+      "sourceStatus": "tracked-modified",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "language/examples/image-sheet.glyph.ts",
+      "sha256": "ac1357035aad88319b7f6fec2f5e7fb3dfacf33e4b238bab4a6bc8bced4a29d7",
+      "bytes": 1848,
+      "sourceStatus": "untracked",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "language/examples/signal-shell.glyph.ts",
+      "sha256": "f42104c6b8a9df82104d6cebee5beaffaf8f7dc3c3cb2bde627266525692a0c6",
+      "bytes": 2273,
+      "sourceStatus": "tracked",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "language/examples/word-ring.glyph.ts",
+      "sha256": "4c11260e5fcc8041928f5b23d35b2c43d8c4e847fcc3080b6cfba69ae17d033d",
+      "bytes": 1663,
+      "sourceStatus": "tracked",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "language/service.cjs",
+      "sha256": "6941ede0012ea654e88aaf180fa41f28b6ae6a52b43bc0cf9ca2351317bef985",
+      "bytes": 2089,
+      "sourceStatus": "tracked",
+      "disposition": "defer-author-compiler"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "6be1a7c5a0b6c53d07eb606645b7352d37439f4f185a8387183371b25104bb69",
+      "bytes": 760,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1f1f6f12d68155cb7d63b2ae51b0e189121ea668d6302e6d3ed7ffe52d697d21",
+      "bytes": 1908,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/capture-check.js",
+      "sha256": "5d36aeb9358dad0e980782c91882ce1448a32416d06490e4579bcfedf7dded3f",
+      "bytes": 7433,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/capture-component.js",
+      "sha256": "0359b614c716990c4e8d60b20be5b6f921e74b1ed6ba40dce3fda69fd98cdd0c",
+      "bytes": 5669,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/capture-workshop.html",
+      "sha256": "207f6173b5602b404a3b884cd776c49eed72c3c8b64b3e6ef031fda5e98eeecb",
+      "bytes": 17532,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/capture-workshop.js",
+      "sha256": "b6d1b33265f20be456f8347afa8c0205ce1e154723b476a552a3d2c2175404c1",
+      "bytes": 38384,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/capture.js",
+      "sha256": "6f3d7139d14ecbc68764dab294229d70b43f81d673946fb786488b8548abcef7",
+      "bytes": 17250,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/component-agent.js",
+      "sha256": "e9717c93310435f85fef0e4f4873420eee98dfa6b36c6a544c8043e18535b31b",
+      "bytes": 13232,
+      "sourceStatus": "tracked",
+      "disposition": "defer-flow-and-dom"
+    },
+    {
+      "path": "player/component.js",
+      "sha256": "4fad612d4489789a03f8c24b8205c1e66cea851b19a75a44c09e88243e617e25",
+      "bytes": 6824,
+      "sourceStatus": "tracked",
+      "disposition": "defer-flow-and-dom"
+    },
+    {
+      "path": "player/design-image-library.css",
+      "sha256": "f646463871c6ff0554262a85f0f282255962d2119572784e6eea4a7a969e6bca",
+      "bytes": 2729,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/design-image-library.html",
+      "sha256": "873c3963a86ac63f841ffceae0596594ddff0dbd30960d2ba4823957b7452b98",
+      "bytes": 4839,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/design-image-library.js",
+      "sha256": "a1528ecf210d6d888321052cb61d2dbafe64cac57f3eb060ef6cfcb6ece9738d",
+      "bytes": 9815,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/design-system.js",
+      "sha256": "d7a0f7a336845dc1ff6c478c8edaa2242b157aa2b3590b3fe04c04ca8757255d",
+      "bytes": 16280,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/exchange-model.js",
+      "sha256": "d9a40ec102adba3059b4129dff5d1372615bb4f976c1ad4a6046d5624fc142f6",
+      "bytes": 5048,
+      "sourceStatus": "tracked",
+      "disposition": "defer-flow-and-dom"
+    },
+    {
+      "path": "player/face-evaluation.js",
+      "sha256": "99b6ad663b58d847d131cd800abad1762fb3bd856709ff746b58c3ef8a745017",
+      "bytes": 7556,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-feature-check.js",
+      "sha256": "36a2f3f94fc6ce8d47ba0d510bb1faa06490c9a9073dc48d5d0062b5b1a5211f",
+      "bytes": 4580,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-features.js",
+      "sha256": "6812a46c6bd332ecfbbe080ddcbebb642fad7ffda16f0c9096fa14fbfdc77159",
+      "bytes": 5028,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-mask-check.js",
+      "sha256": "4f8153bc28718b8f30183e5137548b3115dfa1c2ced9ed2022104409240750a7",
+      "bytes": 6360,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-mask-workshop.js",
+      "sha256": "b895c11dcfb6028c4d8cfaaf15543e9b35de8bb2f5abb642b40dd71e8a4dbd20",
+      "bytes": 9076,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-mask.js",
+      "sha256": "fd02d646a98beb22880a0de86d1affaab12c040c1c1d5e0603c229e3252345bf",
+      "bytes": 12766,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-replay-check.js",
+      "sha256": "f7079b1b755f0d287ec18cf69c3ba363d8c872de5fe9db283639c8eb0248ad2e",
+      "bytes": 5391,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-replay.js",
+      "sha256": "5c8b301abcf3ba6a5ce54245f2e0e2fcb3f9365a12a21c92655d4f4614c939fb",
+      "bytes": 3155,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-scan-check.js",
+      "sha256": "a882f39ae8ab65b8ddc3ab72818f382f35edee06ecdb3374c94eb9ce4f4ee82c",
+      "bytes": 9835,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-scan.js",
+      "sha256": "1a816ffb4271118395e062745c0fc2b6214f754d2bdddd5d1068d944c27da800",
+      "bytes": 16595,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-shape-check.js",
+      "sha256": "04baa228f2ff6ec9df6a11bb9ca2f6a3d0e8fa5ae4010ca125c6b5d97d140c8d",
+      "bytes": 4898,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-shape.js",
+      "sha256": "ebc9a54b09749b4e608e3b7cbeb40277f4d7bb6d314b1fc0b34c9a82bd68479f",
+      "bytes": 6014,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-topology.js",
+      "sha256": "2068039ae4644b65a6bc3e58527c9927fab1e3c8e22f401be7cbbc3c5106eb76",
+      "bytes": 23366,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-tracking-check.js",
+      "sha256": "de94bfa52a0e64096eb2a2790ba71ba87f564c88334e8b52c18d38d9864d35cb",
+      "bytes": 8476,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-tracking-core.js",
+      "sha256": "18266685984c596b0475eec0fc9a2e38c0df9a2c26362bcf19d8de7171f8a51a",
+      "bytes": 3003,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-tracking-worker.js",
+      "sha256": "2665ba128a48988aadf897e1ace098381084fd3dc72334466a65362e6ef9e774",
+      "bytes": 2023,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/face-tracking.js",
+      "sha256": "510e352196b8c36e362ae00a6794508f7c184848de0ece07582980d678af53b2",
+      "bytes": 5849,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/flow-component.js",
+      "sha256": "453984a0bd949535bd613dfe0fc9db9fe3ce74ffdf05e73a74ab825844c356a9",
+      "bytes": 23341,
+      "sourceStatus": "tracked",
+      "disposition": "defer-flow-and-dom"
+    },
+    {
+      "path": "player/flow-core.js",
+      "sha256": "2c6e355b0d35bfa22c4635cc1621ff983e40f62cfce58e1378c265384147789e",
+      "bytes": 15494,
+      "sourceStatus": "tracked",
+      "disposition": "extract-contract-subset",
+      "destination": "packages/runtime/src/core/contracts.js"
+    },
+    {
+      "path": "player/flow-document.js",
+      "sha256": "bff95d9c41f018bb47dbf6c9e1ca7149bdd9aba9073ee3fa5aee54b9a057455d",
+      "bytes": 7152,
+      "sourceStatus": "tracked",
+      "disposition": "defer-flow-and-dom"
+    },
+    {
+      "path": "player/flow-model.js",
+      "sha256": "5021bf68bfef508bbffec39e5b7f5309f0e9b150c9b3363598975401c845843f",
+      "bytes": 19865,
+      "sourceStatus": "tracked",
+      "disposition": "defer-flow-and-dom"
+    },
+    {
+      "path": "player/geometry.js",
+      "sha256": "fcb17880e3dfff705f3937cbabd21ba30049f18eb8144194e643237c3c751748",
+      "bytes": 4729,
+      "sourceStatus": "tracked",
+      "disposition": "extract-renderer-support",
+      "destination": "packages/runtime/src/renderers/scene-geometry.js"
+    },
+    {
+      "path": "player/image-check.js",
+      "sha256": "0b2e371ba997c9760f846a500e699109a04ab2dc346e70926a300a9990eadb00",
+      "bytes": 6473,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/image-surface-component.js",
+      "sha256": "4333ae721d4db0caf11cb2dbb80d554ffee28d5a74349748e4bca711e1d68147",
+      "bytes": 7500,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "player/image-surface.js",
+      "sha256": "773ef93cf648fa21bb33266b5aea600334e7eada6be777c00fd59c6dcf2553f1",
+      "bytes": 18492,
+      "sourceStatus": "untracked",
+      "disposition": "extract",
+      "destination": "packages/runtime/src/image/legacy-image.js"
+    },
+    {
+      "path": "player/image-workshop.css",
+      "sha256": "63f076f488a0b24a6af2e3fc39a64167dc5765df891a29626382d7fb9025e916",
+      "bytes": 3145,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/image-workshop.html",
+      "sha256": "8122e24147adf7ccf48b2ac3e788256628f3e6b6a62188eafaed46bc40d0d7fd",
+      "bytes": 3241,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/image-workshop.js",
+      "sha256": "94b8a5fa1c7568bbaf6013f0b9eca0cddf3ce78eceab7ee4a89ad43b12b856c3",
+      "bytes": 4442,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/math-lab.js",
+      "sha256": "d95edc09c142482a760b65fdefdd0cdb06ea9c1e6402072bb8695a2b4e97756c",
+      "bytes": 3661,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/presets.js",
+      "sha256": "170eda9260dda7a2bc9cc5573d14f162b5548dec38cf2e6f580bb624ed4bea5b",
+      "bytes": 2855,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/program-component.js",
+      "sha256": "46a55a704d817d63d88fe68a6e201e5a56ef485b77edf9459b2278a7a5facc9f",
+      "bytes": 2728,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/program-worker.js",
+      "sha256": "b0f8513c0ef751c0371a0bdf0b5265deb77352febc988f309535b2e05cc66484",
+      "bytes": 4256,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "player/program.js",
+      "sha256": "9b05398df9df7b6317f1552815078b16552d01184172491211caa141c1712013",
+      "bytes": 13208,
+      "sourceStatus": "tracked",
+      "disposition": "extract",
+      "destination": "packages/runtime/src/geometry/program.js"
+    },
+    {
+      "path": "player/renderer.js",
+      "sha256": "3eeaf17de76a525d18cc55ad60413157e69947112b8586defcdc886b10a2ab81",
+      "bytes": 20893,
+      "sourceStatus": "tracked-modified",
+      "disposition": "extract-explicit-renderer",
+      "destination": "packages/runtime/src/renderers/webgl2.js"
+    },
+    {
+      "path": "rust/glyph-core/Cargo.toml",
+      "sha256": "5d4ba14a63cd98c974a005820e1019cd26594661900cace4ae478317cf4e3ed5",
+      "bytes": 205,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "rust/glyph-core/src/lib.rs",
+      "sha256": "802b10b188328c4381b770745a61784af8c1721c577c96b885a91c9de7525e74",
+      "bytes": 4258,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/bench-geometry.cjs",
+      "sha256": "64c3d43ac8e1027bbc508c5658503e56499403c936e81e64d55fe5a35475736e",
+      "bytes": 1385,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/build-design.cjs",
+      "sha256": "af4b683b011a08c9579524f9b79b509f9f1c50fd727741a9f262ebc04a5e5f5c",
+      "bytes": 496,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/build-image-surfaces.py",
+      "sha256": "42371402f7d68649fab745fbb1ea8d5bfc52514859a00cf904129ff20d440d78",
+      "bytes": 2476,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/build-player.py",
+      "sha256": "c0b15ffa565cff0ee5a99e337dc346d55fe000c5afb92eaba025ec4b60dafa6d",
+      "bytes": 6228,
+      "sourceStatus": "tracked-modified",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/export-agent-tools.py",
+      "sha256": "1bd02eb6efaffe141bcf8e02339e822584535431ec9c05b887f27d55d6ffe6ab",
+      "bytes": 378,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/face-tracking-assets.json",
+      "sha256": "2ebf70bfb59432f97625f446b28f03e6cd15aa3089611b7516393778b7c21713",
+      "bytes": 2018,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "scripts/glyphc.cjs",
+      "sha256": "7d947cd97ab99bfc8dbcbdf7d8ebaecdd2dde88c89c52ad4a1ad08e85f55d6da",
+      "bytes": 1430,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "scripts/setup-face-tracking.py",
+      "sha256": "ca58a38d76a9e0d113b69e654a83c5a18773f42c323355a0d6020881eac4d9ab",
+      "bytes": 1283,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-betta.cjs",
+      "sha256": "ba367769a6b102d65aab2e77b65e2d2a6e6c8ede2eb2664e7fc380e6a58592a5",
+      "bytes": 1663,
+      "sourceStatus": "tracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-capture.cjs",
+      "sha256": "0821151e91af1e063950d856b0492f67f3f12d4dc83c4a8e95ad1fecc42ad9e3",
+      "bytes": 4572,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-component-agent.cjs",
+      "sha256": "8302514b268f810911a208ac747b73a76151ebba29885ad88908b624df2187ec",
+      "bytes": 4734,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-design-image.cjs",
+      "sha256": "38cac5fb0f85e8652b2f742caf340b36723ac2f8313a45a16f633fc2cb0a7ac3",
+      "bytes": 3268,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-design.cjs",
+      "sha256": "8d91b0798ab180fb92d1a566fb09fa00024b48281b16fc4a4fff076b960cd7ec",
+      "bytes": 5408,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-face-evaluation.cjs",
+      "sha256": "23c2bcd99bd9e9e11642197ef91fe5aad5a8d7103791bfd172c34b9697017864",
+      "bytes": 7463,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-face-features.cjs",
+      "sha256": "d020532b6fcbe699f566a88b439daf231df2efb0ddcc169cb78ba199a9ec2bf4",
+      "bytes": 2084,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-face-mask.cjs",
+      "sha256": "f45748ef791bf0032d5aef0046f3be3cc29934980720ab4ddfbeda9426e50f1b",
+      "bytes": 5565,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-face-replay.cjs",
+      "sha256": "de0f7606cd34a277434ac626153efac9bb729e49572eb13f3f4697920e931ba5",
+      "bytes": 5240,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-face-scan.cjs",
+      "sha256": "c608bcd847d0996e3eaacfd16bc791d0fdee26b7586001449cd61ce451165a3f",
+      "bytes": 4224,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-face-shape.cjs",
+      "sha256": "b1e72b9410e21092a2c31077f8a391e2b1397cc85e7b2bcacdac721d5773920f",
+      "bytes": 3936,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-face-tracking.cjs",
+      "sha256": "480b86c79b103c1208ff48ec4a639e567235735539fde200697078125b5cb3bf",
+      "bytes": 5192,
+      "sourceStatus": "untracked",
+      "disposition": "lab-retain"
+    },
+    {
+      "path": "test-flow-model.cjs",
+      "sha256": "d41be87de87a18dbfd8abb574ebed4f46f18f880a0e50b8554c224b0ee51c52f",
+      "bytes": 6052,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-flow.cjs",
+      "sha256": "9b30fa957db964a436299d62eeca8010ed25f6db552d38450d7b0ecb8ec2e437",
+      "bytes": 2522,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-image-author.cjs",
+      "sha256": "4e713d04f79908dbb4a0ac5fcc39209ea8b0621fd812d5c4b8503e20d82b0626",
+      "bytes": 6804,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-image-photo.cjs",
+      "sha256": "979415d2961654792100efa2a16331815efb3688e96af6e3bbadf089479fd5a4",
+      "bytes": 5248,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-image-surfaces.cjs",
+      "sha256": "50fc61b937b74573ffc6359401639f8e0a89e30aad36a7048c416156c4668905",
+      "bytes": 3244,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-language.cjs",
+      "sha256": "d69990983d3e286e401a0cfa342d924e877bff3268945e41a220a8ebae16fdad",
+      "bytes": 4226,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-life.cjs",
+      "sha256": "d204a25ae7550c573a43ae62dc3dea147a7c4195e7bd1f329655189ef4e3cebd",
+      "bytes": 2513,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-photo-transition.cjs",
+      "sha256": "75da571099c9c4e54ef9e3a12103ae59c68f5ad2edcaa44d78acea225afd5aab",
+      "bytes": 4654,
+      "sourceStatus": "untracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-player.cjs",
+      "sha256": "45e59d9abfe9cc82bd633bcac8e217e2020502ef5e6aa36bec3f434f601768d6",
+      "bytes": 2217,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-presets.cjs",
+      "sha256": "2df1069bb2d6f9cde4e33b1969e2cdf94972df742f1bf9d98c9c9ecbc829909f",
+      "bytes": 6635,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-program-presets.cjs",
+      "sha256": "a0a7f17c5949ce2150f616e99fd5a91b3dd0eb93b8ad44c837caa3fff93c0ef9",
+      "bytes": 1836,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-program.cjs",
+      "sha256": "b86c9a14586a0454cd09f7c141929f5289ab83f8c2f76114ac04ad089cea3a58",
+      "bytes": 5658,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-scene.js",
+      "sha256": "d6b5fb7f333ced56dccc0c1338c400c1fa478ac5b2b07f13a4c7d0c40b9f3134",
+      "bytes": 2499,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-shared-interface.cjs",
+      "sha256": "930ef9b823c97fd9cf132c7eed0df44e65042fd71ba0df3c8bbc77ed1e1d2a49",
+      "bytes": 3817,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "test-surfaces.js",
+      "sha256": "11a24aa9f3fba7505933d943e2b1217155802c76fb8ccec370f430e0ede64b33",
+      "bytes": 2511,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "0eb0e7ebb3f428f1bb7ed4807b519d50b9ac37d98b34ec4034c59c9ca624edc4",
+      "bytes": 325,
+      "sourceStatus": "tracked",
+      "disposition": "reference-retain"
+    }
+  ]
+}

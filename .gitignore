@@ -13,3 +13,7 @@ coverage/
 *.onnx
 uploads/
 private/
+
+work/
+artifacts/
+*.tgz

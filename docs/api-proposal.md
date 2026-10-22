@@ -1,6 +1,6 @@
 # Public API proposal
 
-**All code below is illustrative and unimplemented in this repository.** Names and signatures will be validated against extracted internals in P0/P1. `@lattune` is a provisional npm scope.
+**This is the long-term API proposal. Its code examples are not the shipped alpha API.** See [the implemented runtime](../packages/runtime/README.md). Names and signatures will be validated against extracted internals in P0/P1. `@lattune` is a provisional npm scope.
 
 ## Definitions, instances and methods
 

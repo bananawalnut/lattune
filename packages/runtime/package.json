@@ -1,0 +1,43 @@
+{
+  "name": "@lattune/runtime",
+  "version": "0.1.0-alpha.0",
+  "private": true,
+  "type": "module",
+  "description": "Headless contracts, programmable image-cell surfaces and explicit renderers.",
+  "license": "UNLICENSED",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "NOTICE.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./geometry": {
+      "types": "./dist/geometry/index.d.ts",
+      "import": "./dist/geometry/index.js"
+    },
+    "./image": {
+      "types": "./dist/image/index.d.ts",
+      "import": "./dist/image/index.js"
+    },
+    "./renderers/webgl2": {
+      "types": "./dist/renderers/webgl2.d.ts",
+      "import": "./dist/renderers/webgl2.js"
+    },
+    "./renderers/canvas": {
+      "types": "./dist/renderers/canvas.d.ts",
+      "import": "./dist/renderers/canvas.js"
+    }
+  }
+}

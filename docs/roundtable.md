@@ -45,3 +45,7 @@ These are release checkpoints, not reasons to stop preparing a concrete reposito
 ## Final artifact review
 
 Both architecture and integration reviewers read the drafted blueprint/API/roadmap. Incorporated corrections: browser-safe author vocabulary versus Node compiler entries; headless flow versus DOM adapter; authorization with the first P3 writes; explicit immutable version saves; import path/symlink revalidation and no implicit package execution; preview forgery/timeout tests; finite portable state, stable sampling and resource grants; separately measured Canvas fallback. No reviewer treated the concept as an implemented library.
+
+## Naming ceremony follow-up
+
+The user rejected Lattune and then the proposed artifact names Armillary and Orrery. No replacement is selected. The repository and alpha package retain their temporary names until the user chooses. See [the naming brief](naming-ceremony.md).

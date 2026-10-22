@@ -1,0 +1,14 @@
+{
+  "name": "image-surface-consumer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 8793",
+    "build": "vite build",
+    "dev:plain": "node serve-plain.mjs"
+  },
+  "devDependencies": {
+    "vite": "8.3.5",
+    "typescript": "6.0.3"
+  }
+}

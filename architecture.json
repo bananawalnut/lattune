@@ -9,7 +9,7 @@
       "path": "packages/runtime",
       "allows": [],
       "environment": "headless",
-      "status": "planned"
+      "status": "alpha-extracted"
     },
     {
       "id": "runtime/geometry",
@@ -18,7 +18,7 @@
         "runtime/core"
       ],
       "environment": "headless",
-      "status": "planned"
+      "status": "alpha-extracted"
     },
     {
       "id": "runtime/image",
@@ -28,7 +28,7 @@
         "runtime/geometry"
       ],
       "environment": "host-resources",
-      "status": "planned"
+      "status": "alpha-extracted"
     },
     {
       "id": "runtime/renderers",
@@ -38,7 +38,7 @@
         "runtime/geometry"
       ],
       "environment": "browser-explicit-init",
-      "status": "planned"
+      "status": "alpha-extracted"
     },
     {
       "id": "runtime/elements",
@@ -154,5 +154,14 @@
     "preset entries do not eagerly import every recipe",
     "runtime does not depend on author or agent",
     "built artifacts, not only source graphs, prove isolation"
+  ],
+  "packageNames": [
+    "@lattune/runtime",
+    "@lattune/author",
+    "@lattune/agent"
+  ],
+  "implementationNotes": [
+    "WebGL2 and Canvas remain combined in the extracted renderer; separate optimized adapters are not yet implemented.",
+    "Native elements, flow, author compiler and agent integrations remain planned."
   ]
 }

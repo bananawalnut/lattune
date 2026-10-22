@@ -1,6 +1,6 @@
 # Production blueprint
 
-Decision date: 2026-10-22. Status: proposed implementation plan, accepted direction for this repository foundation.
+Decision date: 2026-10-22. Status: productionization plan; the first private-alpha image runtime is extracted. See [current evidence](runtime-extraction.md).
 
 ## Product decision
 

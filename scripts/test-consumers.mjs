@@ -1,0 +1,52 @@
+import assert from 'node:assert/strict';
+import { mkdtemp, cp, readFile, writeFile, readdir, access } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { gzipSync } from 'node:zlib';
+const root=fileURLToPath(new URL('..',import.meta.url));
+const args=process.argv.slice(2),at=args.indexOf('--project');
+const project=at>=0?path.resolve(args[at+1]):await mkdtemp(path.join(tmpdir(),'runtime-consumer-'));
+const run=(cmd,args,cwd)=>{const r=spawnSync(cmd,args,{cwd,encoding:'utf8',env:{...process.env,npm_config_audit:'false',npm_config_fund:'false'}});if(r.status!==0)throw Error(`${cmd} ${args.join(' ')}\n${r.stdout}\n${r.stderr}`);return r.stdout;};
+const manifest=JSON.parse(await readFile(path.join(root,'packages/runtime/package.json'),'utf8'));
+const packedDir=await mkdtemp(path.join(tmpdir(),'runtime-pack-'));
+const pack=JSON.parse(run('npm',['pack','--ignore-scripts','--pack-destination',packedDir,'--json'],path.join(root,'packages/runtime')))[0];
+assert(pack.files.some(f=>f.path==='dist/image/index.js'));
+assert(pack.files.every(f=>['package.json','README.md','NOTICE.md'].includes(f.path)||f.path.startsWith('dist/')),'Unexpected packaged source/private files');
+const artifact=path.join(packedDir,pack.filename);
+await cp(path.join(root,'examples/image-surface'),project,{recursive:true});
+run('npm',['install','--ignore-scripts','--save-exact',artifact],project);
+const installed=path.join(project,'node_modules',manifest.name);
+await access(installed);
+const dependency=JSON.parse(await readFile(path.join(project,'package.json'),'utf8')).dependencies[manifest.name];
+assert(dependency.endsWith('.tgz'),'Consumer must use an actual archive rather than a workspace link');
+// Use exact installed declarations, without path aliases or an ambient DOM library for SSR.
+await writeFile(path.join(project,'headless.ts'),`import { createImageSurface } from '${manifest.name}/image';
+import { createInstance } from '${manifest.name}/core';
+const s=createImageSurface({pixels:{width:2,height:2,data:new Uint8Array(16).fill(255)},sampling:{columns:2,rows:2}});
+s.invoke('receivePhoto',s.stagePhoto({width:1,height:1,data:new Uint8Array([0,255,0,255])}));
+// @ts-expect-error unknown method must not typecheck
+s.invoke('uploadToCloud',{});
+// @ts-expect-error resource reference must be text
+s.invoke('receivePhoto',{photo:12});
+s.dispose(); void createInstance;
+`);
+const tsc=path.join(root,'node_modules/typescript/bin/tsc');
+await writeFile(path.join(project,'tsconfig.headless.json'),JSON.stringify({compilerOptions:{strict:true,noEmit:true,lib:['ES2022'],types:[],target:'ES2022',module:'NodeNext',moduleResolution:'NodeNext'},include:['headless.ts']}));
+run(process.execPath,[tsc,'-p','tsconfig.headless.json'],project);
+run(process.execPath,[tsc,'-p','tsconfig.json'],project);
+await writeFile(path.join(project,'ssr.mjs'),`import assert from 'node:assert/strict';
+for(const key of ['document','window','HTMLElement','customElements'])Object.defineProperty(globalThis,key,{get(){throw Error('DOM import: '+key)}});
+const api=await import('${manifest.name}/image');await import('${manifest.name}/renderers/webgl2');
+const c=api.createImageSurface({pixels:{width:2,height:2,data:new Uint8Array(16).fill(255)},sampling:{columns:2,rows:2}});assert.equal(c.cellCount,4);c.dispose();
+`);
+run(process.execPath,['ssr.mjs'],project);
+run('npm',['run','build'],project);
+const assets=await readdir(path.join(project,'dist/assets'));
+const js=assets.filter(f=>f.endsWith('.js'));
+let raw=0,gzip=0;for(const file of js){const b=await readFile(path.join(project,'dist/assets',file));raw+=b.length;gzip+=gzipSync(b).length;assert(!/typescript|hermes|mediapipe|GLYPH_STUDIO_CONNECTION/.test(b.toString()),'Authoring/model/capture leaked into consumer bundle');}
+JSON.parse(await readFile(path.join(installed,'dist/provenance.json'),'utf8'));
+const result={package:manifest.name,version:manifest.version,artifact:pack.filename,packageFiles:pack.files.length,project,checks:['packed archive install','SSR without DOM','SSR types without DOM','browser types with rejected invalid methods','Vite production build'],demoBundle:{rawBytes:raw,gzipBytes:gzip,note:'Whole interactive demo plus shared WebGL2/Canvas fallback; not the proposed minimal-scene budget.'}};
+console.log(JSON.stringify(result,null,2));
+await writeFile(path.join(root,'work/consumer-result.json'),JSON.stringify(result,null,2)+'\n').catch(()=>{});

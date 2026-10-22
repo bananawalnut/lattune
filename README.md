@@ -1,61 +1,74 @@
-# Lattune
+# Image-surface runtime
 
-**Programmable surfaces. Meaningful motion. Components you own.**
+Working repository name: Lattune. The replacement name is still being chosen; see [the naming ceremony](docs/naming-ceremony.md).
 
-Lattune is the proposed successor to Glyph Studio: an importable interaction library, a local component authoring studio, and thin integrations for Hermes and other agents.
+**An instrument for giving data form, color, and motion.**
 
-**Status: product blueprint and interactive design concept. No production library, compiler, agent connection, or npm packages are shipped by this repository yet.** The existing Glyph Studio remains the working prototype; it has not been renamed, deleted, or bulk-copied here.
+Lattune is an interaction library with a planned local authoring studio and Hermes/MCP integrations. Its first working slice is a **private alpha runtime** that can be packed and imported into a separate coding project. It has no runtime dependencies.
 
-## Start here
+The inventory and initial extraction are implemented. The Studio at `apps/studio-concept` remains a scripted design concept; agent integrations, compiler extraction, native Web Components and the remaining production release gates are planned.
 
-- [Production blueprint](docs/production-blueprint.md) — scope, architecture, sequencing, exit criteria.
-- [Roundtable and decisions](docs/roundtable.md) — three independent reviews and resolved tradeoffs.
-- [Product redesign](docs/product-design.md) — the new Studio workflow and interaction model.
-- [Public API proposal](docs/api-proposal.md) — component contracts, geometry, resources, receipts, imports.
-- [Agent and Hermes integration](docs/agent-integration.md) — semantic tools, permissions, installation lifecycle.
-- [Migration and release gates](docs/migration-release.md) — what moves, what stays experimental, what proves readiness.
-- [Machine-readable roadmap](roadmap.json) and [package boundaries](architecture.json).
-
-## Preview the Studio concept
+## Run and verify
 
 ```sh
-npm run dev
-# http://127.0.0.1:8792
-```
-
-The concept uses native HTML, CSS, JavaScript, and one Canvas 2D preview. It illustrates the intended layout, inspector, source proposal review, and import plan. Designer proposals are scripted examples; it does not call a model, compile TypeScript, install components, or connect to Hermes. No dependencies or build step are required.
-
-```sh
+npm ci
+npm run build:runtime
+npm run test:runtime
+npm run test:consumers
 npm run check
 ```
 
-Checks validate the planning artifacts and concept syntax. They do not certify an unimplemented runtime.
+`test:consumers` creates a clean project outside the repository, packs the runtime, installs its actual archive, checks strict TypeScript (including an SSR configuration without DOM types), imports it server-side with DOM access forbidden, and builds a Vite app. It prints the project location and measured bundle sizes. It uses no workspace link, path alias, Studio, model or global-script runtime.
 
-![Lattune Studio design concept](docs/assets/studio-concept.png)
+To keep a particular consumer project, run `npm run test:consumers -- --project /absolute/destination`. Use a new or test-owned directory: fixture files are copied there. Then in that directory run `npm run dev` (Vite, port 8793) and optionally `npm run dev:plain` (native ESM, port 8794). The no-build page loads the installed package files directly from its own Node server.
 
-[Foundation verification record](docs/foundation-verification.md).
+## Import an image surface
 
-## Intended product boundaries
+```ts
+import { createImageSurface } from '@lattune/runtime/image';
+import { createRenderer } from '@lattune/runtime/renderers/webgl2';
 
-| Deliverable | Responsibility | Status |
-|---|---|---|
-| `@lattune/runtime` | Typed contracts, geometry, optional renderers, image behaviors, native elements | Proposed; scope unreserved |
-| `@lattune/author` | TypeScript authoring, compiler, diagnostics, CLI, artifact manifests | Proposed |
-| `@lattune/agent` | Typed operation registry, clients, isolated Node authoring service | Proposed |
-| Lattune Studio | Local project editor, preview, inspector, Designer | Design concept |
-| Hermes plugin | Thin tools, skill/profile, connection and installation management | Planned |
+const surface = createImageSurface({
+  pixels: imageData, // { width, height, data: RGBA Uint8Array/Uint8ClampedArray }
+  sampling: { columns: 84, rows: 56 },
+  preset: 'bend',
+  transition: { duration: 2.4, mode: 'sweep' },
+});
+const view = createRenderer(canvas);
+const frame = surface.sample(0);
+view.setPointBuffers(frame.descriptor, frame.buffers, frame.colors);
+view.render(frame.descriptor, 0);
 
-Public package names are examples until the npm scope is secured. A public repository is not an npm release or a license grant. Licensing is an explicit release decision; current package metadata is `UNLICENSED`.
+const committed = surface.invoke('receivePhoto', surface.stagePhoto(nextImageData));
+// The host advances presentation and renders another sampled frame.
+surface.advance(1 / 60);
+surface.dispose();
+view.dispose();
+```
 
-The roadmap is tracked in DevGraph under **Lattune production library and Studio**, within the existing Front-end tools and component libraries initiative. Phase task IDs are recorded in `roadmap.json`; implementation remains planned.
+Create an archive after building with `npm pack ./packages/runtime`, then install that `.tgz` in your project. The package is not published on npm. Its scoped name is provisional; npm scope ownership has not been established. The code is `UNLICENSED` pending an explicit license decision.
 
-## Design principles
+## What works now
 
-1. The library works without Studio, an agent, a camera, or a compiler in the visitor's page.
-2. People, agents, and components use the same typed methods.
-3. Component source belongs to the consuming project; upgrades preserve local edits.
-4. State commitment and visual completion are distinct events.
-5. Mathematical freedom stays available; GPU optimization is earned by measurements.
-6. Native HTML carries meaningful content and controls; motion has accessible alternatives.
+- Headless runtime contracts and programmer-defined methods with revision checks and bounded in-memory replay receipts.
+- Parametric surfaces, paths, cubic curves, composites and stable point buffers.
+- Image surfaces with eight geometric presets, custom synchronous math, stable UV/cell identity, independent RGB fields and five color-transition modes.
+- Receiver-local photo handles: copied pixel input, expiry, explicit release, capacity limits and disposal.
+- Explicit WebGL2 renderer with extracted Canvas fallback; import-time SSR safety.
+- Declarations and actual tarball consumption in independent Vite/native-ESM/SSR projects.
 
-The name Lattune combines lattice and attune. A preliminary exact-name check on 2026-10-22 returned no GitHub repositories or unscoped npm package. No domain, npm organization, or trademark rights are reserved or asserted.
+Read the [runtime API and limitations](packages/runtime/README.md), [inventory](docs/inventory.md), and [extraction evidence](docs/runtime-extraction.md).
+
+## Direction and remaining work
+
+- [Production blueprint](docs/production-blueprint.md)
+- [Roundtable and naming history](docs/roundtable.md)
+- [Studio redesign](docs/product-design.md) — run `npm run dev` for the labeled concept.
+- [Long-term API proposal](docs/api-proposal.md) — distinguish it from today's alpha API.
+- [Designer, Hermes and MCP plan](docs/agent-integration.md)
+- [Migration and release gates](docs/migration-release.md)
+- [Roadmap](roadmap.json) and [package boundaries](architecture.json)
+
+DevGraph tracks this bounded effort under the existing Front-end tools and component libraries initiative. Stable record IDs retain their original `lattune-` prefix to preserve history.
+
+The current shared renderer includes both WebGL2 and Canvas code. Its bundle is measured as that combined implementation. This alpha does not certify mobile/Safari support, context recovery, accessibility completeness, durable authoring writes, or the proposed minimal-scene performance budget. Capture and animal research remain separate labs in the preserved Glyph Studio prototype.
