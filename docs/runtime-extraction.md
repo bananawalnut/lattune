@@ -25,3 +25,11 @@ Measurements are produced by the consumer check for the exact build. The initial
 This slice ships no native Web Component adapter, extracted author compiler, source import/upgrade engine, browser component directory, Hermes/MCP adapter, durable receipts, or preview sandbox. Callback math is trusted application code. Runtime request replay retains only the latest 128 IDs per live instance; it is not durable exactly-once delivery. Sampled frame arrays are borrowed, must not be mutated, and require a copy for retention.
 
 The current image recipe always owns its cell grid; a received photo maps colors into its existing UVs rather than changing that geometry's aspect ratio. Full device/browser, assistive-technology, context-loss and resource-stress release gates are not yet certified. Voice/model policy and the original Studio remain unchanged.
+
+## Executed browser and CI evidence
+
+The built-in Chromium browser exercised the installed-package Vite project with 4,704 cells: WebGL2 preview, typed synthetic-photo receipt, presentation progress while already committed, changing surface geometry, finishing color flow, and pausing motion. A separate Canvas session produced the same contract receipt and settled colors with no warning/error logs. The native ESM page on its own plain HTTP server also returned a real committed receipt and completed its transition without warnings/errors after a first-frame elapsed-time clamp was fixed. This is one browser environment, not the full production browser matrix.
+
+[CI run 39857320605](https://github.com/bananawalnut/lattune/actions/runs/39857320605) passed for runtime commit `d70fb50`: build, eight runtime suites, real archive-install consumer/type/SSR/Vite checks, and foundation validation. DevGraph P0/P1 evidence is updated without marking the remaining release gates complete.
+
+![Actual installed-package consumer, with a committed receipt](assets/imported-image-surface.png)
