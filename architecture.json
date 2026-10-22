@@ -1,0 +1,158 @@
+{
+  "schema": "lattune.architecture-plan.v1",
+  "status": "proposed",
+  "npmScope": "@lattune",
+  "scopeReserved": false,
+  "units": [
+    {
+      "id": "runtime/core",
+      "path": "packages/runtime",
+      "allows": [],
+      "environment": "headless",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/geometry",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core"
+      ],
+      "environment": "headless",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/image",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core",
+        "runtime/geometry"
+      ],
+      "environment": "host-resources",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/renderers",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core",
+        "runtime/geometry"
+      ],
+      "environment": "browser-explicit-init",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/elements",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core",
+        "runtime/geometry",
+        "runtime/renderers"
+      ],
+      "environment": "browser-explicit-init",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/flow",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core",
+        "runtime/geometry"
+      ],
+      "environment": "headless-optional-beta",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/presets",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core",
+        "runtime/geometry",
+        "runtime/image",
+        "runtime/flow"
+      ],
+      "environment": "individual-imports",
+      "status": "planned"
+    },
+    {
+      "id": "runtime/elements/flow",
+      "path": "packages/runtime",
+      "allows": [
+        "runtime/core",
+        "runtime/flow",
+        "runtime/elements"
+      ],
+      "environment": "browser-explicit-init-beta",
+      "status": "planned"
+    },
+    {
+      "id": "author/vocabulary",
+      "path": "packages/author",
+      "allows": [
+        "runtime/core"
+      ],
+      "environment": "browser-safe-types-and-vocabulary",
+      "status": "planned"
+    },
+    {
+      "id": "author/node",
+      "path": "packages/author",
+      "allows": [
+        "author/vocabulary",
+        "runtime/core",
+        "runtime/geometry",
+        "runtime/image"
+      ],
+      "environment": "node-development",
+      "status": "planned"
+    },
+    {
+      "id": "agent/client",
+      "path": "packages/agent",
+      "allows": [
+        "runtime/core"
+      ],
+      "environment": "browser-or-node",
+      "status": "planned"
+    },
+    {
+      "id": "agent/node",
+      "path": "packages/agent",
+      "allows": [
+        "agent/client",
+        "author/node",
+        "runtime/core"
+      ],
+      "environment": "node-only",
+      "status": "planned"
+    },
+    {
+      "id": "studio",
+      "path": "apps/studio-concept",
+      "allows": [
+        "agent/client",
+        "author/vocabulary",
+        "runtime/core",
+        "runtime/elements",
+        "runtime/image"
+      ],
+      "environment": "local-authoring",
+      "status": "concept-only"
+    },
+    {
+      "id": "hermes",
+      "path": "plugins/hermes",
+      "allows": [
+        "agent/client"
+      ],
+      "environment": "native-client",
+      "status": "planned"
+    }
+  ],
+  "invariants": [
+    "core imports no DOM, GPU, Node, author, agent or Studio",
+    "browser agent exports cannot load agent/node",
+    "preset entries do not eagerly import every recipe",
+    "runtime does not depend on author or agent",
+    "built artifacts, not only source graphs, prove isolation"
+  ]
+}

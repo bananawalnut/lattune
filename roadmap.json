@@ -1,0 +1,104 @@
+{
+  "schema": "lattune.roadmap.v1",
+  "status": "planned",
+  "created": "2026-10-22",
+  "canonicalTracker": "DevGraph",
+  "repository": "https://github.com/bananawalnut/lattune",
+  "phases": [
+    {
+      "id": "P0",
+      "title": "Preserve and specify",
+      "dependsOn": [],
+      "ownerRole": "Architecture / product",
+      "status": "planned",
+      "exitCriteria": [
+        "Inventory reviewed prototype source and provenance",
+        "Choose code license and audit redistribution rights",
+        "Freeze contract/sampling fixtures and supported/lab scope"
+      ]
+    },
+    {
+      "id": "P1",
+      "title": "Package spine",
+      "dependsOn": [
+        "P0"
+      ],
+      "ownerRole": "Library / release",
+      "status": "planned",
+      "exitCriteria": [
+        "Extract headless ESM core with public declarations",
+        "Install actual tarballs in clean vanilla, Vite and SSR consumers",
+        "Prove no browser globals or authoring dependencies in core imports"
+      ]
+    },
+    {
+      "id": "P2",
+      "title": "Vertical component",
+      "dependsOn": [
+        "P1"
+      ],
+      "ownerRole": "Runtime / accessibility / QA",
+      "status": "planned",
+      "exitCriteria": [
+        "Import and mount an accessible image-surface recipe",
+        "Human, agent and peer invoke the same receive contract",
+        "Test target commit versus visual settlement, cancellation and resource disposal",
+        "Measure browser/device workload and bundle budgets"
+      ]
+    },
+    {
+      "id": "P3",
+      "title": "Authoring and source imports",
+      "dependsOn": [
+        "P1"
+      ],
+      "ownerRole": "Authoring / service",
+      "status": "planned",
+      "exitCriteria": [
+        "Compile exact source with diagnostics and provenance",
+        "Version source and implement plan/apply import and three-way upgrade conflicts",
+        "Test crash recovery, dedupe and stale revision preservation",
+        "Receiver-side capability checks and canonical root/symlink revalidation protect the first writes",
+        "Immutable component version save is distinct from project source commit; import executes no scripts"
+      ]
+    },
+    {
+      "id": "P4",
+      "title": "Studio and agent integrations",
+      "dependsOn": [
+        "P2",
+        "P3"
+      ],
+      "ownerRole": "Product / integration",
+      "status": "planned",
+      "exitCriteria": [
+        "Build project-centric source/preview/inspector/Designer workspace",
+        "Extend the existing authorized semantic service through adapter parity tests",
+        "Ship thin Hermes and MCP adapters with parity tests",
+        "Validate managed install/update/rollback/uninstall and provider preservation"
+      ]
+    },
+    {
+      "id": "P5",
+      "title": "Beta and release",
+      "dependsOn": [
+        "P4"
+      ],
+      "ownerRole": "Release / QA",
+      "status": "planned",
+      "exitCriteria": [
+        "Curate five recipes and five-minute integration docs",
+        "Pass packed-artifact consumer, lifecycle, browser, accessibility and security gates",
+        "Complete notices, compatibility, changelog, provenance and support policy",
+        "Optional flow remains beta unless its arrival/commit gates pass"
+      ]
+    }
+  ],
+  "deferred": [
+    "face reconstruction and tracking",
+    "animal motion research",
+    "arbitrary TypeScript-to-GPU compilation",
+    "hosted collaboration and public registry"
+  ],
+  "releaseClaim": "No production library implemented by this planning foundation"
+}

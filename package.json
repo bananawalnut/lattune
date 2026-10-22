@@ -1,0 +1,11 @@
+{
+  "name": "lattune-foundation",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Lattune product blueprint and interactive Studio design concept; no runtime release yet.",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}
