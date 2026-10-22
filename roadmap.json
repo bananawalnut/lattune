@@ -15,7 +15,8 @@
         "Inventory reviewed prototype source and provenance",
         "Choose code license and audit redistribution rights",
         "Freeze contract/sampling fixtures and supported/lab scope"
-      ]
+      ],
+      "taskId": "lattune-p0"
     },
     {
       "id": "P1",
@@ -29,7 +30,8 @@
         "Extract headless ESM core with public declarations",
         "Install actual tarballs in clean vanilla, Vite and SSR consumers",
         "Prove no browser globals or authoring dependencies in core imports"
-      ]
+      ],
+      "taskId": "lattune-p1"
     },
     {
       "id": "P2",
@@ -44,7 +46,8 @@
         "Human, agent and peer invoke the same receive contract",
         "Test target commit versus visual settlement, cancellation and resource disposal",
         "Measure browser/device workload and bundle budgets"
-      ]
+      ],
+      "taskId": "lattune-p2"
     },
     {
       "id": "P3",
@@ -60,7 +63,8 @@
         "Test crash recovery, dedupe and stale revision preservation",
         "Receiver-side capability checks and canonical root/symlink revalidation protect the first writes",
         "Immutable component version save is distinct from project source commit; import executes no scripts"
-      ]
+      ],
+      "taskId": "lattune-p3"
     },
     {
       "id": "P4",
@@ -76,7 +80,8 @@
         "Extend the existing authorized semantic service through adapter parity tests",
         "Ship thin Hermes and MCP adapters with parity tests",
         "Validate managed install/update/rollback/uninstall and provider preservation"
-      ]
+      ],
+      "taskId": "lattune-p4"
     },
     {
       "id": "P5",
@@ -91,7 +96,8 @@
         "Pass packed-artifact consumer, lifecycle, browser, accessibility and security gates",
         "Complete notices, compatibility, changelog, provenance and support policy",
         "Optional flow remains beta unless its arrival/commit gates pass"
-      ]
+      ],
+      "taskId": "lattune-p5"
     }
   ],
   "deferred": [
@@ -100,5 +106,10 @@
     "arbitrary TypeScript-to-GPU compilation",
     "hosted collaboration and public registry"
   ],
-  "releaseClaim": "No production library implemented by this planning foundation"
+  "releaseClaim": "No production library implemented by this planning foundation",
+  "tracking": {
+    "initiative": "frontend-tools-components",
+    "project": "lattune-production",
+    "issue": "lattune-production-plan"
+  }
 }

@@ -11,6 +11,8 @@ Date: 2026-10-22. Scope: this planning repository and its scripted design concep
 - Returned to the default image-surface concept, paused decorative motion, and captured `docs/assets/studio-concept.png`.
 - Architecture and integration reviewers read final drafts; their concrete corrections are recorded in the roundtable.
 
+- Initial public GitHub foundation workflow passed for commit `ab8678d`: [run 39740788169](https://github.com/bananawalnut/lattune/actions/runs/39740788169). It validates the foundation only.
+
 ## Not established
 
 No runtime package, compiler, model connection, actual component import, Hermes installation, MCP endpoint, cross-browser support, screen-reader certification, npm provenance or production performance has been tested or shipped here. Those are future release gates. The GitHub workflow runs only foundation checks; its remote result must be inspected after push rather than inferred from local success.

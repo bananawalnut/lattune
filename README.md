@@ -47,6 +47,8 @@ Checks validate the planning artifacts and concept syntax. They do not certify a
 
 Public package names are examples until the npm scope is secured. A public repository is not an npm release or a license grant. Licensing is an explicit release decision; current package metadata is `UNLICENSED`.
 
+The roadmap is tracked in DevGraph under **Lattune production library and Studio**, within the existing Front-end tools and component libraries initiative. Phase task IDs are recorded in `roadmap.json`; implementation remains planned.
+
 ## Design principles
 
 1. The library works without Studio, an agent, a camera, or a compiler in the visitor's page.
